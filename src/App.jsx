@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/layout/home/Hero";
+import Hero from "./components/home/Hero";
 
 const Home = () => {
   return (
