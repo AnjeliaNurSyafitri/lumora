@@ -5,6 +5,8 @@ import CategorySection from "./components/home/CategorySection";
 import FeaturedProducts from "./components/home/FeaturedProducts";
 import PromoSection from "./components/home/PromoSection";
 import AboutSection from "./components/home/AboutSection";
+import Footer from "./components/layout/Footer";
+import ShopPage from "./pages/shop/ShopPage";
 
 const Home = () => {
   return (
@@ -25,7 +27,10 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<ShopPage />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 };
