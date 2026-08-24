@@ -7,6 +7,8 @@ import PromoSection from "./components/home/PromoSection";
 import AboutSection from "./components/home/AboutSection";
 import Footer from "./components/layout/Footer";
 import ShopPage from "./pages/shop/ShopPage";
+import CollectionsPage from "./pages/collections/CollectionsPage";
+import AboutPage from "./pages/about/AboutPage";
 
 const Home = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<ShopPage />} />
+        <Route path="/collections" element={<CollectionsPage />} />
+        <Route path="about" element={<AboutPage />} />
       </Routes>
 
       <Footer />
