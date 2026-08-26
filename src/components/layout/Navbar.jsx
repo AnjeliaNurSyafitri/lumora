@@ -1,9 +1,11 @@
 import { Heart, ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { cartCount } = useCart();
 
     return (
         <header className="sticky top-0 z-50 bg-[#FCFAF7]/95 backdrop-blur-sm border-b border-[#E9E2DA]">
@@ -63,21 +65,27 @@ const Navbar = () => {
                             <Heart size={20} strokeWidth={1.6} />
                         </button>
 
-                        <button 
-                            type="button"
-                            className="text-[#292629] hover:text-[#4A3048] transition-colors"
+                        <Link
+                            to="/cart"
+                            className="flex items-center gap-2 text-sm text-[#292629] hover:text-[#4A3048] transition-colors"
                             aria-label="Shopping cart"
                         >
                             <ShoppingBag size={20} strokeWidth={1.6} />
-                        </button>
+                            Cart
+
+                            {cartCount > 0 && (
+                                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[#4A3048] px-1 text-[9px] font-medium text-white">
+                                    {cartCount}
+                                </span>
+                            )}
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <button 
+                    <button
                         type="button"
                         className="md:hidden text-[#292629]"
                         onClick={() => setIsMenuOpen((prev) => !prev)}
-                        aria-label="Toggle menu"
                     >
                         {isMenuOpen ? (
                             <X size={24} strokeWidth={1.6} />
@@ -132,13 +140,19 @@ const Navbar = () => {
                                     Wishlist
                                 </button>
 
-                                <button
-                                    type="button"
-                                    className="flex items-center gap-2 text-sm"
+                                <Link
+                                    to="/cart"
+                                    className="relative text-[#292629] hover:text-[#4A3048] transition-colors"
+                                    aria-label="Shopping cart"
                                 >
-                                    <ShoppingBag size={18} strokeWidth={1.6} />
-                                    Cart
-                                </button>
+                                    <ShoppingBag size={20} strokeWidth={1.6} />
+                                    
+                                    {cartCount > 0 && (
+                                        <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#4A3048] px-1 text-[9px] font-medium text-white">
+                                            {cartCount}
+                                        </span>
+                                    )}
+                                </Link>
                             </div>
 
                         </div>

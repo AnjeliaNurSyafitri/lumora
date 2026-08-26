@@ -1,11 +1,13 @@
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
     return (
         <article className="group">
             {/* Product Image */}
-            <div 
-                className={`relative aspect-[4/5] overflow-hidden rounded-[1.5rem] ${product.bg}`}
+            <Link 
+                to={`/product/${product.id}`}
+                className={`relative block aspect-[4/5] overflow-hidden rounded-[1.5rem] ${product.bg}`}
             >
                 {/* Decorative Shape */}
                 <div 
@@ -48,7 +50,7 @@ const ProductCard = ({ product }) => {
                         Quick Add
                     </button>
                 </div>
-            </div>
+            </Link>
 
             {/* Product Information */}
             <div className="px-1 pt-4">

@@ -1,73 +1,7 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 import ProductCard from "../../components/shop/ProductCard";
-
-const products = [
-    {
-        id: 1,
-        name: "Lumière Serum",
-        category: "Skincare",
-        price: "$32.00",
-        bg: "bg-[#E8DDD8]",
-        accent: "bg-[#D2BFC7]",
-    },
-    {
-        id: 2,
-        name: "Soft Glow Blush",
-        category: "Makeup",
-        price: "$24.00",
-        bg: "bg-[#E7D9D5]",
-        accent: "bg-[#D8B8BE]",
-    },
-    {
-        id: 3,
-        name: "Lumière Eau de Parfum",
-        category: "Fragrance",
-        price: "$48.00",
-        bg: "bg-[#DDD8E2]",
-        accent: "bg-[#C7B8CF]",
-    },
-    {
-        id: 4,
-        name: "Velvet Body Lotion",
-        category: "Body Care",
-        price: "$28.00",
-        bg: "bg-[#E8E0D6]",
-        accent: "bg-[#D7C8B5]",
-    },
-    {
-        id: 5,
-        name: "Daily Glow Cleanser",
-        category: "Skincare",
-        price: "$26.00",
-        bg: "bg-[#E2DDD7]",
-        accent: "bg-[#C9BFB2]",
-    },
-    {
-        id: 6,
-        name: "Rose Veil Lip Tint",
-        category: "Makeup",
-        price: "$22.00",
-        bg: "bg-[#E8D7DA]",
-        accent: "bg-[#D5B4BB]",
-    },
-    {
-        id: 7,
-        name: "Soft Bloom Mist",
-        category: "Fragrance",
-        price: "$36.00",
-        bg: "bg-[#DDDCE5]",
-        accent: "bg-[#C2BED2]",
-    },
-    {
-        id: 8,
-        name: "Silk Hand Cream",
-        category: "Body Care",
-        price: "$18.00",
-        bg: "bg-[#E6DED3]",
-        accent: "bg-[#D0BFA8]",
-    },
-];
+import { products } from "../../data/products";
 
 const categories = [
     "All",
