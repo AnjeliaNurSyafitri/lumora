@@ -53,6 +53,10 @@ export const CartProvider = ({ children }) => {
         );
     };
 
+    const clearCart = () => {
+        setCartItems([]);
+    };
+
     const cartCount = cartItems.reduce(
         (total, item) => total + item.quantity,
         0
@@ -70,6 +74,7 @@ export const CartProvider = ({ children }) => {
                 addToCart,
                 removeFromCart,
                 updateQuantity,
+                clearCart,
                 cartCount,
                 cartTotal,
             }}

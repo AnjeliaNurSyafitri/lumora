@@ -57,13 +57,13 @@ const Navbar = () => {
 
                     {/* Dekstop Actions */}
                     <div className="hidden md:flex items-center gap-5">
-                        <button 
-                            type="button"
+                        <Link 
+                            to="/wishlist"
                             className="text-[#292629] hover:text-[#4A3048] transition-colors"
                             aria-label="Wishlist"
                         >
                             <Heart size={20} strokeWidth={1.6} />
-                        </button>
+                        </Link>
 
                         <Link
                             to="/cart"
@@ -132,13 +132,14 @@ const Navbar = () => {
                             </Link>
 
                             <div className="flex items-center gap-5 pt-2 border-t border-[#E9E2DA]">
-                                <button
-                                    type="button"
-                                    className="flex items-center gap-2 text-sm"
+                                <Link
+                                    to="/wishlist"
+                                    onClick={() => setIsMenuOpen(false)}
+                                    className="flex items-center gap-2 text-sm text-[#292629] hover:text-[#4A3048] transition-colors"
                                 >
                                     <Heart size={18} strokeWidth={1.6} />
                                     Wishlist
-                                </button>
+                                </Link>
 
                                 <Link
                                     to="/cart"

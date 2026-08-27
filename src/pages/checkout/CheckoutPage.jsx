@@ -1,12 +1,20 @@
 import { ArrowLeft, Lock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
 const CheckoutPage = () => {
     const {
         cartItems,
         cartTotal,
+        clearCart,
     } = useCart();
+
+    const navigate = useNavigate();
+
+    const handlePlaceOrder = () => {
+        clearCart();
+        navigate("/order-success");
+    };
 
     const shipping = cartItems.length > 0 ? 5 : 0;
     const grandTotal = cartTotal + shipping;
@@ -269,6 +277,7 @@ const CheckoutPage = () => {
                             {/* Place Order */}
                             <button
                                 type="button"
+                                onClick={handlePlaceOrder}
                                 className="mt-7 w-full rounded-full bg-[#4A3048] px-7 py-3.5 text-sm font-medium text-white transition-colors hover:bg-[#362336]"
                             >
                                 Place Order
