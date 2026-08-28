@@ -26,3 +26,155 @@ select {
 button {
   cursor: pointer;
 }
+
+/* LUMORA HERO ANIMATIONS */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade {
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease-out forwards;
+}
+
+.hero-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.hero-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.45s;
+}
+
+.hero-delay-4 {
+  animation-delay: 0.6s;
+}
+
+/* Product reveal */
+
+@keyframes heroProductReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-product {
+  opacity: 0;
+  animation: 
+  heroProductReveal 1s ease-out 0.35s forwards,
+  heroProductFloat 5s ease-in-out 1.35s infinite;
+}
+
+/* Product floating */
+
+@keyframes heroProductFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Decorative circles */ 
+@keyframes heroOrbit { 
+  0%, 
+  100% { 
+    transform: translate(0, 0) scale(1); 
+  } 
+  
+  50% { 
+    transform: translate(-12px, 10px) scale(1.04); 
+  } 
+} 
+
+.hero-orbit { 
+  animation: heroOrbit 7s ease-in-out infinite; 
+} 
+
+@keyframes heroOrbitReverse { 
+  0%, 
+  100% { 
+    transform: translate(0, 0) scale(1); 
+  } 
+
+  50% { 
+    transform: translate(12px, -10px) scale(1.05); 
+  } 
+} 
+
+.hero-orbit-reverse { 
+  animation: heroOrbitReverse 8s ease-in-out infinite; 
+} 
+
+/* Floating information card */ 
+
+@keyframes heroFloating { 
+  0%, 
+  100% { 
+    transform: translateY(0); 
+  } 
+  
+  50% { 
+    transform: translateY(-6px); 
+  } 
+} 
+
+.hero-floating { 
+  animation: heroFloating 4.5s ease-in-out infinite; 
+} 
+
+/* Small sparkle */ 
+
+@keyframes heroSparkle { 
+  0%, 
+  100% { 
+    opacity: 0.7; 
+    transform: scale(1); 
+  } 
+  
+  50% { 
+    opacity: 1; 
+    transform: scale(1.12); 
+  } 
+} 
+
+.hero-sparkle { 
+  display: inline-block; 
+  animation: heroSparkle 2.5s ease-in-out infinite; 
+} 
+
+/* Accessibility */ 
+
+@media (prefers-reduced-motion: reduce) { 
+  .hero-fade, 
+  .hero-product, 
+  .hero-orbit, 
+  .hero-orbit-reverse, 
+  .hero-floating, 
+  .hero-sparkle { 
+    animation: none; 
+    opacity: 1; 
+    transform: none; 
+  } 
+}
