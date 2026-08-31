@@ -27,7 +27,7 @@ button {
   cursor: pointer;
 }
 
-/* LUMORA HERO ANIMATIONS */
+/* === LUMORA HERO ANIMATIONS === */
 
 @keyframes heroFadeUp {
   from {
@@ -177,4 +177,146 @@ button {
     opacity: 1; 
     transform: none; 
   } 
+}
+
+/* === Scroll Reveal Animation ===*/
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: 
+    opacity var(--reveal-duration) ease-out var(--reveal-delay),
+    transform var(--reveal-duration) ease-out var(--reveal-delay);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* === Promo Section Animation === */
+
+.promo-float {
+  animation: promoFloat 7s ease-in-out infinite;
+}
+
+.promo-float-reverse {
+  animation: promoFloatReverse 9s ease-in-out infinite;
+}
+
+.promo-pulse {
+  animation: promoPulse 3s ease-in-out infinite;
+}
+
+.promo-pulse-slow {
+  animation: promoPulse 4.5s ease-in-out infinite;
+}
+
+.promo-product {
+  animation: promoProductFloat 5s ease-in-out infinite;
+}
+
+@keyframes promoFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-18px, 15px);
+  }
+}
+
+@keyframes promoFloatReverse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(20px, -15px);
+  }
+}
+
+@keyframes promoPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes promoProductFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(3deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-float,
+  .promo-float-reverse,
+  .promo-pulse,
+  .promo-pulse-slow,
+  .promo-product {
+    animation: none;
+  }
+}
+
+/* === About Section Animation === */
+
+.about-float {
+  animation: aboutFloat 8s ease-in-out infinite;
+}
+
+.about-float-reverse {
+  animation: aboutFloatReverse 10s ease-in-out infinite;
+}
+
+@keyframes aboutFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(12px, 18px);
+  }
+}
+
+@keyframes aboutFloatReverse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-15px, -12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-float,
+  .about-float-reverse {
+    animation: none;
+  }
 }

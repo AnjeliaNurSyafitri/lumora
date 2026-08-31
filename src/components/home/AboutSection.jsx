@@ -1,5 +1,6 @@
 import { Heart, Sparkles, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
+import Reveal from "../common/Reveal";
 
 const values = [
     {
@@ -9,7 +10,7 @@ const values = [
     },
     {
         icon: Leaf,
-        title: "Simple & International",
+        title: "Simple & Intentional",
         description: "We believe everyday essentials should feel effortless and meaningful.",
     },
     {
@@ -28,106 +29,122 @@ const AboutSection = () => {
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
 
                     {/* Visual */}
-                    <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-[#EDE4DE]">
-                        {/* Decorative Shapes */}
-                        <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-[#D9C4D5]/60" />
+                    <Reveal>
+                        <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] bg-[#EDE4DE]">
 
-                        <div className="absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-[#CBB5C8]/40" />
+                            {/* Decorative Shapes */}
+                            <div className="about-float absolute -left-20 -top-20 h-64 w-64 rounded-full bg-[#D9C4D5]/60" />
 
-                        {/* Center Content */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="flex h-64 w-52 flex-col items-center justify-center rounded-[1.5rem] border border-white/70 bg-[#F8F3EF]/80 shadow-xl backdrop-blur-sm">
-                                <span className="text-4xl text-[#4A3048]">
-                                    ✦
-                                </span>
+                            <div className="about-float-reverse absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-[#CBB5C8]/40" />
 
-                                <p className="mt-4 font-['Playfair_Display'] text-3xl font-semibold tracking-[0.12em] text-[#4A3048]">
-                                    LUMORA
+                            {/* Center Content */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="about-card flex h-64 w-52 flex-col items-center justify-center rounded-[1.5rem] border border-white/70 bg-[#F8F3EF]/80 shadow-xl backdrop-blur-sm transition-all duration-700 group-hover:-translate-y-2 group-hover:shadow-2xl">
+
+                                    <span className="inline-block text-4xl text-[#4A3048] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+                                        ✦
+                                    </span>
+
+                                    <p className="mt-4 font-['Playfair_Display'] text-3xl font-semibold tracking-[0.12em] text-[#4A3048]">
+                                        LUMORA
+                                    </p>
+
+                                    <p className="mt-2 text-[9px] tracking-[0.3em] text-[#8A7B80]">
+                                        EVERYDAY, ELEVATED.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Floating Label */}
+                            <div className="absolute bottom-6 left-6 rounded-2xl border border-white/60 bg-white/70 px-5 py-4 backdrop-blur-md transition-all duration-500 group-hover:-translate-y-1">
+                                <p className="text-xs uppercase tracking-[0.18em] text-[#8A5A83]">
+                                    Our philosophy
                                 </p>
 
-                                <p className="mt-2 text-[9px] tracking-[0.3em] text-[#8A7B80]">
-                                    EVERYDAY, ELEVATED.
+                                <p className="mt-1 font-['Playfair_Display'] text-lg text-[#4A3048]">
+                                    Beauty in simplicity
                                 </p>
                             </div>
                         </div>
-
-                        {/* Floating Label */}
-                        <div className="absolute bottom-6 left-6 rounded-2xl border border-white/60 bg-white/70 px-5 py-4 backdrop-blur-md">
-                            <p className="text-xs uppercase tracking-[0.18em] text-[#8A5A83]">
-                                Our philosophy
-                            </p>
-
-                            <p className="mt-1 font-['Playfair_Display'] text-lg text-[#4A3048]">
-                                Beauty in simplicity
-                            </p>
-                        </div>
-                    </div>
+                    </Reveal>
 
                     {/* Content */}
-                    <div className="max-w-xl">
-                        <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[#8A5A83]">
-                            About Lumora
-                        </p>
+                    <Reveal delay={150}>
+                        <div className="max-w-xl">
+                            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-[#8A5A83]">
+                                About Lumora
+                            </p>
 
-                        <h2 className="font-['Playfair_Display'] text-4xl font-semibold leading-tight text-[#292629] sm:text-5xl">
-                            Designed for the
-                            <span className="block text-[#4A3048]">
-                                everyday moments.
-                            </span>
-                        </h2>
+                            <h2 className="font-['Playfair_Display'] text-4xl font-semibold leading-tight text-[#292629] sm:text-5xl">
+                                Designed for the
+                                <span className="block text-[#4A3048]">
+                                    everyday moments.
+                                </span>
+                            </h2>
 
-                        <p className="mt-6 text-base leading-7 text-[#6B6468]">
-                            LUMORA is a beauty and lifestyle brand built around
-                            the idea that everyday moments deserve a little
-                            more intention. We curate thoughtful essentials
-                            that bring simplicity, comfort, and elegance into
-                            your daily rituals.
-                        </p>
+                            <p className="mt-6 text-base leading-7 text-[#6B6468]">
+                                LUMORA is a beauty and lifestyle brand built around
+                                the idea that everyday moments deserve a little
+                                more intention. We curate thoughtful essentials
+                                that bring simplicity, comfort, and elegance into
+                                your daily rituals.
+                            </p>
 
-                        <p className="mt-4 text-base leading-7 text-[#6B6468]">
-                            From skincare to fragrance, every collection is
-                            designed to feel timeless, effortless, and
-                            uniquely yours.
-                        </p>
+                            <p className="mt-4 text-base leading-7 text-[#6B6468]">
+                                From skincare to fragrance, every collection is
+                                designed to feel timeless, effortless, and
+                                uniquely yours.
+                            </p>
 
-                        <Link
-                            to="/about"
-                            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#4A3048]"
-                        >
-                            Discover our story
+                            <Link
+                                to="/about"
+                                className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#4A3048] transition-all duration-300 hover:gap-3"
+                            >
+                                Discover our story
 
-                            <span className="transition-transform duration-300 group-hover:translate-x-1">
-                               → 
-                            </span>
-                        </Link>
-                    </div>
+                                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                                    → 
+                                </span>
+                            </Link>
+                        </div>
+                    </Reveal>
 
                 </div>
 
                 {/* Values */}
                 <div className="mt-20 grid grid-cols-1 gap-8 border-t border-[#E9E2DA] pt-12 sm:grid-cols-3">
-                    {values.map((value) => {
+
+                    {values.map((value, index) => {
                         const Icon = value.icon;
 
                         return (
-                            <div key={value.title}>
-                                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#F5EFEA] text-[#4A3048]">
-                                    <Icon
-                                        size={19}
-                                        strokeWidth={1.5}
-                                    />
+                            <Reveal
+                                key={value.title}
+                                delay={index * 120}
+                            >
+                                <div className="group">
+
+                                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#F5EFEA] text-[#4A3048] transition-all duration-500 group-hover:-translate-y-1 group-hover:bg-[#4A3048] group-hover:text-white group-hover:shadow-md">
+                                        <Icon
+                                            size={19}
+                                            strokeWidth={1.5}
+                                            className="transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    </div>
+
+                                    <h3 className="font-['Playfair_Display'] text-xl font-semibold text-[#4A3048] transition-transform duration-300 group-hover:translate-x-0.5">
+                                        {value.title}
+                                    </h3>
+
+                                    <p className="mt-2 max-w-xs text-sm leading-6 text-[#6B6468]">
+                                        {value.description}
+                                    </p>
+
                                 </div>
-
-                                <h3 className="font-['Playfair_Display'] text-xl font-semibold text-[#4A3048]">
-                                    {value.title}
-                                </h3>
-
-                                <p className="mt-2 max-w-xs text-sm leading-6 text-[#6B6468]">
-                                    {value.description}
-                                </p>
-                            </div>
+                            </Reveal>
                         );
                     })}
+
                 </div>
 
             </div>
