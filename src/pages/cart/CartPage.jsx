@@ -1,14 +1,15 @@
 import { ArrowLeft, Minus, Plus, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
+import useCartPage from "../../hooks/useCartPage";
 
 const CartPage = () => {
     const {
         cartItems,
-        removeFromCart,
-        updateQuantity,
         cartTotal,
-    } = useCart();
+        decreaseQuantity,
+        increaseQuantity,
+        handleRemove,
+    } = useCartPage();
 
     return (
         <main className="min-h-screen bg-[#FCFAF7]">
@@ -96,12 +97,7 @@ const CartPage = () => {
                                         <div className="flex items-center rounded-full border border-[#D8CEC7]">
                                             <button
                                                 type="button"
-                                                onClick={() =>
-                                                    updateQuantity(
-                                                        item.id,
-                                                        item.quantity - 1
-                                                    )
-                                                }
+                                                onClick={() => decreaseQuantity(item)}
                                                 className="flex h-9 w-9 items-center justify-center text-[#4A3048]"
                                             >
                                                 <Minus size={14} />
@@ -113,12 +109,7 @@ const CartPage = () => {
 
                                             <button
                                                 type="button"
-                                                onClick={() =>
-                                                    updateQuantity(
-                                                        item.id,
-                                                        item.quantity + 1
-                                                    )
-                                                }
+                                                onClick={() => increaseQuantity(item)}
                                                 className="flex h-9 w-9 items-center justify-center text-[#4A3048]"
                                             >
                                                 <Plus size={14} />
@@ -127,9 +118,7 @@ const CartPage = () => {
 
                                         <button
                                             type="button"
-                                            onClick={() => 
-                                                removeFromCart(item.id)
-                                            }
+                                            onClick={() => handleRemove(item.id)}
                                             className="text-[#8A7B80] transition-colors hover:text-[#4A3048]"
                                             aria-label={`Remove ${item.name}`}
                                         >

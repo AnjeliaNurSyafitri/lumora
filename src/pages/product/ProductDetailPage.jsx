@@ -1,20 +1,17 @@
 import { ArrowLeft, Heart, Minus, Plus, ShoppingBag } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
-import { useState } from "react";
-import { products } from "../../data/products";
-import { useCart } from "../../context/CartContext";
-import { useWishlist } from "../../context/WishlistContext";
+import { Link } from "react-router-dom";
+import useProductDetail from "../../hooks/useProductDetail";
 
 const ProductDetailPage = () => {
-    const { id } = useParams();
-    const { addToCart } = useCart();
-    const { toggleWishlist, isInWishlist } = useWishlist();
-
-    const product = products.find(
-        (item) => item.id === Number(id)
-    );
-
-    const [quantity, setQuantity] = useState(1);
+    const {
+        product,
+        quantity,
+        isWishlisted,
+        decreaseQuantity,
+        increaseQuantity,
+        handleAddToCart,
+        handleToggleWishlist,
+    } = useProductDetail();
 
     if (!product) {
         return (
@@ -39,8 +36,6 @@ const ProductDetailPage = () => {
             </main>
         );
     }
-
-    const isWishlisted = isInWishlist(product.id);
 
     return (
         <main className="min-h-screen bg-[#FCFAF7]">
@@ -124,11 +119,7 @@ const ProductDetailPage = () => {
 
                             <button
                                 type="button"
-                                onClick={() =>
-                                    setQuantity((current) =>
-                                        Math.max(1, current - 1)
-                                    )
-                                }
+                                onClick={decreaseQuantity}
                                 className="flex h-11 w-11 items-center justify-center text-[#4A3048] transition-colors hover:bg-[#F5EFEA]"
                                 aria-label="Decrease quantity"
                             >
@@ -141,9 +132,7 @@ const ProductDetailPage = () => {
 
                             <button
                                 type="button"
-                                onClick={() =>
-                                    setQuantity((current) => current + 1)
-                                }
+                                onClick={increaseQuantity}
                                 className="flex h-11 w-11 items-center justify-center text-[#4A3048] transition-colors hover:bg-[#F5EFEA]"
                                 aria-label="Increase quantity"
                             >
@@ -158,7 +147,7 @@ const ProductDetailPage = () => {
 
                         <button
                             type="button"
-                            onClick={() => addToCart(product, quantity)}
+                            onClick={handleAddToCart}
                             className="group inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#4A3048] px-7 py-3.5 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#362336]"
                         >
                             <ShoppingBag
@@ -172,7 +161,7 @@ const ProductDetailPage = () => {
                         {/* Wishlist */}
                         <button
                             type="button"
-                            onClick={() => toggleWishlist(product)}
+                            onClick={handleToggleWishlist}
                             aria-label={
                                 isWishlisted
                                     ? `Remove ${product.name} from wishlist`

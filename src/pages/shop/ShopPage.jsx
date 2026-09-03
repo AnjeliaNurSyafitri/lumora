@@ -2,31 +2,17 @@ import { Search } from "lucide-react";
 import { useState } from "react";
 import ProductCard from "../../components/shop/ProductCard";
 import Reveal from "../../components/common/Reveal";
-import { products } from "../../data/products";
-
-const categories = [
-    "All",
-    "Skincare",
-    "Makeup",
-    "Fragrance",
-    "Body Care",
-];
+import useShop from "../../hooks/useShop";
 
 const ShopPage = () => {
-    const [selectedCategory, setSelectedCategory] = useState("All");
-    const [search, setSearch] = useState("");
-
-    const filteredProducts = products.filter((product) => {
-        const matchesCategory =
-            selectedCategory === "All" ||
-            product.category === selectedCategory;
-
-        const matchesSearch = product.name
-            .toLowerCase()
-            .includes(search.toLowerCase());
-
-        return matchesCategory && matchesSearch;
-    });
+    const {
+       categories,
+        selectedCategory,
+        setSelectedCategory,
+        search,
+        setSearch,
+        filteredProducts, 
+    } = useShop();
 
     return (
         <main className="min-h-screen bg-[#FCFAF7]">

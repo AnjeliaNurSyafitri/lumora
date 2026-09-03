@@ -1,12 +1,12 @@
 import { ArrowLeft, Heart, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useWishlist } from "../../context/WishlistContext";
+import useWishlistPage from "../../hooks/useWishlistPage";
 
 const WishlistPage = () => {
     const {
         wishlistItems,
-        removeFromWishlist,
-    } = useWishlist();
+        handleRemove,
+    } = useWishlistPage();
 
     return (
         <main className="min-h-screen bg-[#FCFAF7]">
@@ -110,9 +110,7 @@ const WishlistPage = () => {
                                         {/* Remove Wishlist */}
                                         <button
                                             type="button"
-                                            onClick={() =>
-                                                removeFromWishlist(product.id)
-                                            }
+                                            onClick={() => handleRemove(product.id)}
                                             aria-label={`Remove ${product.name} from wishlist`}
                                             className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/80 text-[#4A3048] backdrop-blur-sm transition-all duration-300 hover:bg-[#4A3048] hover:text-white"
                                         >
