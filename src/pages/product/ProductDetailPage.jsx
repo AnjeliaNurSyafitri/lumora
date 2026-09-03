@@ -3,10 +3,12 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { products } from "../../data/products";
 import { useCart } from "../../context/CartContext";
+import { useWishlist } from "../../context/WishlistContext";
 
 const ProductDetailPage = () => {
     const { id } = useParams();
     const { addToCart } = useCart();
+    const { toggleWishlist, isInWishlist } = useWishlist();
 
     const product = products.find(
         (item) => item.id === Number(id)
@@ -37,6 +39,8 @@ const ProductDetailPage = () => {
             </main>
         );
     }
+
+    const isWishlisted = isInWishlist(product.id);
 
     return (
         <main className="min-h-screen bg-[#FCFAF7]">
@@ -165,14 +169,26 @@ const ProductDetailPage = () => {
                             Add to Cart
                         </button>
 
+                        {/* Wishlist */}
                         <button
                             type="button"
-                            aria-label="Add to wishlist"
-                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#D8CEC7] text-[#4A3048] transition-all duration-300 hover:border-[#4A3048] hover:bg-[#F5EFEA]"
+                            onClick={() => toggleWishlist(product)}
+                            aria-label={
+                                isWishlisted
+                                    ? `Remove ${product.name} from wishlist`
+                                    : `Add ${product.name} to wishlist`
+                            }
+                            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-300 hover:scale-105 ${
+                                isWishlisted
+                                    ? "border-[#292629] bg-white text-[#292629] shadow-sm"
+                                    : "border-[#D8CEC7] bg-white text-[#4A3048] hover:border-[#4A3048] hover:bg-[#F5EFEA]"
+                            }`}
                         >
                             <Heart
                                 size={19}
                                 strokeWidth={1.5}
+                                fill={isWishlisted ? "currentColor" : "none"}
+                                className="transition-transform duration-300 active:scale-75"
                             />
                         </button>
 

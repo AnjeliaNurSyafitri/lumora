@@ -54,28 +54,73 @@ const Footer = () => {
                             {/* Social Media */}
                             <div className="mt-7 flex items-center gap-3">
 
+                                {/* Instagram */}
                                 <a 
                                     href="#" 
                                     aria-label="Instagram"
-                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#E9DDE7] transition-all duration-300 hover:bg-white hover:text-[#4A3048]"
+                                    className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#E9DDE7] transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#4A3048] hover:shadow-lg"
                                 >
-                                    IG
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-[17px] w-[17px] transition-transform duration-300 group-hover:scale-110"
+                                    >
+                                        <rect
+                                            x="3"
+                                            y="3"
+                                            width="18"
+                                            height="18"
+                                            rx="5"
+                                            stroke="currentColor"
+                                            strokeWidth="1.7"
+                                        />
+                                        <circle
+                                            cx="12"
+                                            cy="12"
+                                            r="4"
+                                            stroke="currentColor"
+                                            strokeWidth="1.7"
+                                        />
+                                        <circle
+                                            cx="17.5"
+                                            cy="6.5"
+                                            r="1"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
                                 </a>
 
-                                <a 
-                                    href="#" 
+                                {/* Facebook */}
+                                <a
+                                    href="#"
                                     aria-label="Facebook"
-                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#E9DDE7] transition-all duration-300 hover:bg-white hover:text-[#4A3048]"
+                                    className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#E9DDE7] transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#4A3048] hover:shadow-lg"
                                 >
-                                    FB
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-[17px] w-[17px] transition-transform duration-300 group-hover:scale-110"
+                                    >
+                                        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H7.7v3h2.7v8h3.1Z" />
+                                    </svg>
                                 </a>
 
-                                <a 
-                                    href="#" 
+                                {/* Twitter / X */}
+                                <a
+                                    href="#"
                                     aria-label="Twitter"
-                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#E9DDE7] transition-all duration-300 hover:bg-white hover:text-[#4A3048]"
+                                    className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[#E9DDE7] transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#4A3048] hover:shadow-lg"
                                 >
-                                    TW
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-[16px] w-[16px] transition-transform duration-300 group-hover:scale-110"
+                                    >
+                                        <path d="M18.9 2.5h3.1l-6.8 7.8 8 11.2h-6.3l-4.9-6.8-6 6.8H2.9l7.3-8.3L2.5 2.5H9l4.4 6.2 5.5-6.2Zm-1.1 17h1.7L7.1 4.4H5.3L17.8 19.5Z" />
+                                    </svg>
                                 </a>
 
                             </div>

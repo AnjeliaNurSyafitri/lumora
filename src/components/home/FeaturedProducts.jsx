@@ -1,4 +1,5 @@
 import { Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "../common/Reveal";
 
 const products = [
@@ -55,9 +56,9 @@ const FeaturedProducts = () => {
                             </h2>
                         </div>
 
-                        <button
-                            type="button"
-                            className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-[#4A3048]"
+                        <Link
+                            to="/shop"
+                            className="group inline-flex w-fit items-center gap-2 text-sm font-medium text-[#4A3048] transition-colors duration-300 hover:text-[#6B4566]"
                         >
                             View all products
 
@@ -66,7 +67,7 @@ const FeaturedProducts = () => {
                                 strokeWidth={1.5}
                                 className="transition-transform duration-300 group-hover:translate-x-1"
                             />
-                        </button>
+                        </Link>
                     </div>
                 </Reveal>
 

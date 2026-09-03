@@ -1,9 +1,25 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
-    const [wishlistItems, setWishlistItems] = useState([]);
+    const [wishlistItems, setWishlistItems] = useState(() => {
+        try {
+            const savedWishlist = localStorage.getItem("lumora-wishlist");
+
+            return savedWishlist ? JSON.parse(savedWishlist) : [];
+        } catch (error) {
+            console.error("Failed to load wishlist:", error);
+            return [];
+        }
+    });
+
+    useEffect(() => {
+        localStorage.setItem(
+            "lumora-wishlist",
+            JSON.stringify(wishlistItems)
+        );
+    }, [wishlistItems]);
 
     const toggleWishlist = (product) => {
         setWishlistItems((currentItems) => {
