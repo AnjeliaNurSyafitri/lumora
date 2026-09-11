@@ -1,41 +1,7 @@
 import { Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "../common/Reveal";
-
-const products = [
-    {
-        id: 1,
-        name: "Lumière Serum",
-        category: "Skincare",
-        price: "$32.00",
-        bg: "bg-[#E8DDD8]",
-        accent: "bg-[#D2BFC7]",
-    },
-    {
-        id: 2,
-        name: "Soft Glow Blush",
-        category: "Makeup",
-        price: "$24.00",
-        bg: "bg-[#E7D9D5]",
-        accent: "bg-[#D8B8BE]",
-    },
-    {
-        id: 3,
-        name: "Lumière Eau de Parfum",
-        category: "Fragrance",
-        price: "$48.00",
-        bg: "bg-[#DDD8E2]",
-        accent: "bg-[#C7B8CF]",
-    },
-    {
-        id: 4,
-        name: "Velvet Body Lotion",
-        category: "Body Care",
-        price: "$28.00",
-        bg: "bg-[#E8E0D6]",
-        accent: "bg-[#D7C8B5]",
-    },
-];
+import { products } from "../../data/products";
 
 const FeaturedProducts = () => {
     return (
@@ -73,7 +39,7 @@ const FeaturedProducts = () => {
 
                 {/* Product Grid */}
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    {products.map((product, index) => (
+                    {products.slice(0, 4).map((product, index) => (
                         <Reveal
                             key={product.id}
                             delay={index * 120}
