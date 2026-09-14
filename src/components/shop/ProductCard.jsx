@@ -41,25 +41,13 @@ const ProductCard = ({ product }) => {
                             className={`absolute -bottom-16 -left-16 h-40 w-40 rounded-full ${product.accent} opacity-20 transition-all duration-700 ease-out group-hover:scale-125`} 
                         />
 
-                        {/* Product Placeholder */}
+                        {/* Product Image */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="relative flex h-52 w-32 items-center justify-center rounded-[1.25rem] border border-white/60 bg-[#F8F3EF]/80 shadow-lg backdrop-blur-[2px] transition-all duration-700 ease-out group-hover:scale-110 group-hover:-rotate-1 group-hover:shadow-2xl sm:h-56">
-
-                                {/* Shine */}
-                                <div className="absolute inset-0 overflow-hidden rounded-[1.25rem]">
-                                    <div className="absolute -left-1/2 top-0 h-full w-1/3 -skew-x-12 bg-white/20 opacity-0 transition-all duration-700 group-hover:left-[120%] group-hover:opacity-100" />
-                                </div>
-
-                                <div className="relative z-10 text-center">
-                                    <span className="inline-block text-2xl text-[#4A3048] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
-                                        ✦
-                                    </span>
-
-                                    <p className="mt-2 font-['Playfair_Display'] text-lg font-semibold tracking-[0.1em] text-[#4A3048]">
-                                        LUMORA
-                                    </p>
-                                </div>
-                            </div>
+                            <img 
+                                src={product.image}
+                                alt={product.name}
+                                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
+                            />
                         </div>
 
                         {/* Quick Add */}

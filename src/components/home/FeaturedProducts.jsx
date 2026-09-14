@@ -67,19 +67,13 @@ const FeaturedProducts = () => {
                                         />
                                     </button>
 
-                                    {/* Product Placeholder */}
+                                    {/* Product Image */}
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="relative flex h-52 w-32 items-center justify-center rounded-[1.25rem] border border-white/60 bg-[#F8F3EF]/80 shadow-lg transition-transform duration-500 group-hover:scale-105 sm:h-56">
-                                            <div className="text-center">
-                                                <span className="text-2xl text-[#4A3048]">
-                                                    ✦
-                                                </span>
-
-                                                <p className="mt-2 font-['Playfair_Display'] text-lg font-semibold tracking-[0.1em] text-[#4A3048]">
-                                                    LUMORA
-                                                </p>
-                                            </div>
-                                        </div>
+                                        <img 
+                                            src={product.image} 
+                                            alt={product.name}
+                                            className="h-full w-full object-cover" 
+                                        />
                                     </div>
 
                                     {/* Quick Add */}

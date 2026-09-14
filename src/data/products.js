@@ -6,6 +6,7 @@ export const products = [
         price: "$32.00",
         bg: "bg-[#E8DDD8]",
         accent: "bg-[#D2BFC7]",
+        image: "/images/products/lumiere-serum.png",
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ export const products = [
         price: "$24.00",
         bg: "bg-[#E7D9D5]",
         accent: "bg-[#D8B8BE]",
+        image: "/images/products/soft-glow-blush.png",
     },
     {
         id: 3,
@@ -22,6 +24,7 @@ export const products = [
         price: "$48.00",
         bg: "bg-[#DDD8E2]",
         accent: "bg-[#C7B8CF]",
+        image: "/images/products/lumiere-eau-de-parfum.png",
     },
     {
         id: 4,
@@ -30,6 +33,7 @@ export const products = [
         price: "$28.00",
         bg: "bg-[#E8E0D6]",
         accent: "bg-[#D7C8B5]",
+        image: "/images/products/velvet-body-lotion.png",
     },
     {
         id: 5,
